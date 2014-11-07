@@ -1,3 +1,5 @@
+// Package byter is an API for counting occurrences of same-bytes, and stripping stray
+// occurrences until a threshold.
 package byter
 
 // Counts byte occurrences within a given array of bytes.

@@ -1,12 +1,13 @@
+// Command byter implements a simple same-byte occurrence calculator.
 package main
 
 import (
-	table "github.com/crackcomm/go-clitable"
-	"github.com/brendanashworth/byter/api"
-	"io/ioutil"
-	"strconv"
 	"fmt"
+	"github.com/brendanashworth/byter/api"
+	table "github.com/crackcomm/go-clitable"
+	"io/ioutil"
 	"os"
+	"strconv"
 )
 
 func main() {
@@ -33,7 +34,7 @@ func main() {
 	tableData := make(map[string]interface{})
 
 	for key, value := range occurrenceMap {
-		tableData[fmt.Sprintf("0x%X", key)] = strconv.Itoa(int((float64(value) / totalBytes) * 100)) + "%" // gives nice value percentage
+		tableData[fmt.Sprintf("0x%X", key)] = strconv.Itoa(int((float64(value)/totalBytes)*100)) + "%" // gives nice value percentage
 	}
 
 	// create table with remaining occurrences
