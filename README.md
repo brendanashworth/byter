@@ -1,4 +1,5 @@
 # byter
+[![GoDoc](https://godoc.org/github.com/brendanashworth/byter?status.svg)](http://godoc.org/github.com/brendanashworth/byter/api)
 
 > A simple CLI utility (with an internal API) for calculating the percentages of same-byte occurrences within a binary file. By default it will print all bytes with an occurrence rate of more than 1%.
 
@@ -29,12 +30,12 @@ Example output:
 Parsed 2091696 bytes.
 ```
 
-### [API](http://godoc.org/github.com/brendanashworth/byter)
+### Example API
 ```go
 package main
 
 import (
-	"github.com/brendanashworth/byter"
+	"github.com/brendanashworth/byter/api"
 )
 
 func main() {

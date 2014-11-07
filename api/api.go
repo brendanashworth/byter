@@ -1,4 +1,4 @@
-package main
+package byter
 
 // Counts byte occurrences within a given array of bytes.
 // Returns an int representing the total bytes in the array and a map of

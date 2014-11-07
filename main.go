@@ -2,6 +2,7 @@ package main
 
 import (
 	table "github.com/crackcomm/go-clitable"
+	"github.com/brendanashworth/byter/api"
 	"io/ioutil"
 	"strconv"
 	"fmt"
@@ -23,10 +24,10 @@ func main() {
 	}
 
 	// count occurrences then strip by threshold of 1%
-	bytes, occurrenceMap := CountOccurrences(data)
+	bytes, occurrenceMap := byter.CountOccurrences(data)
 	totalBytes := float64(bytes)
 
-	occurrenceMap = StripOccurrences(occurrenceMap, totalBytes, 0.01)
+	occurrenceMap = byter.StripOccurrences(occurrenceMap, totalBytes, 0.01)
 
 	// convert to map[string]int for cli table
 	tableData := make(map[string]interface{})
