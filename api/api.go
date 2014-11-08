@@ -40,3 +40,26 @@ func StripOccurrences(data map[byte]int, size float64, threshold float64) map[by
 
 	return data
 }
+
+// Retrieves the top byte occurrences within a dataset. If 2+ bytes
+// occur in the dataset with the same number of occurrences, they will
+// all be within the array.
+func GetTopBytes(data map[byte]int) (result []byte) {
+	// iterate over bytes
+	top := 0
+
+	for key, occurrences := range data {
+		if occurrences > top {
+			// clear array
+			result = result[:0]
+
+			// add new byte
+			result[0] = key
+		} else if occurrences == top {
+			// append byte
+			result[len(result)] = key
+		}
+	}
+	
+	return
+}
